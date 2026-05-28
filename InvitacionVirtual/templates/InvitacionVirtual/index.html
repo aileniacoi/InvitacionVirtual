@@ -1,0 +1,264 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ailen & Juan - 3 de Octubre 2026</title>
+    <link rel="icon" type="image/png" href="{% static 'InvitacionVirtual/img/Icono.png' %}">
+    <link rel="stylesheet" href="{% static 'InvitacionVirtual/css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% if messages %}
+        <div class="messages-container">
+            {% for message in messages %}
+                <div class="message {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <img src="{% static 'InvitacionVirtual/img/header.png' %}" alt="Save the Date - Ailen & Juan" class="hero-corazon">
+        <div class="scroll-indicator"><span>&#9660;</span></div>
+    </section>
+
+    <!-- ==================== COUNTDOWN ==================== -->
+    <section class="countdown-section snow-bg">
+        <img src="{% static 'InvitacionVirtual/img/separador-arriba.png' %}" alt="" class="section-sep top">
+        <div class="container">
+            <h2 class="section-title script-font">Faltan</h2>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">0</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-sep">&middot;</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">0</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-sep">&middot;</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">0</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-sep">&middot;</div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">0</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'InvitacionVirtual/img/separador-abajo.png' %}" alt="" class="section-sep bottom">
+    </section>
+
+    <!-- ==================== INVITACION ==================== -->
+    <section class="invite-section snow-bg">
+        <div class="flor-deco left"></div>
+        <div class="flor-deco right"></div>
+        <div class="container">
+            <img src="{% static 'InvitacionVirtual/img/separador3.png' %}" alt="" class="img-separator">
+            <div class="invite-card">
+                <p class="invite-pre">Tenemos el agrado de invitarlos a nuestra boda</p>
+                <div class="invite-names">
+                    <span class="invite-name">Ailen</span>
+                    <span class="invite-amp">&</span>
+                    <span class="invite-name">Juan</span>
+                </div>
+                <img src="{% static 'InvitacionVirtual/img/separador1.png' %}" alt="" class="img-separator small">
+                <p class="invite-date">Sábado, 3 de Octubre de 2026</p>
+                <p class="invite-time">21:00 horas</p>
+                <img src="{% static 'InvitacionVirtual/img/anillos.png' %}" alt="Anillos" class="invite-rings">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LUGAR ==================== -->
+    <section class="venue-section snow-bg">
+        <div class="flor-deco right"></div>
+        <img src="{% static 'InvitacionVirtual/img/separador-arriba.png' %}" alt="" class="section-sep top">
+        <div class="container">
+            <h2 class="section-title script-font">Ceremonia &amp; Recepción</h2>
+            <div class="info-card">
+                <h3>Salón de Eventos "Siddhartha"</h3>
+                <p class="venue-address">Av. San Martin 1555 , Mina Clavero</p>
+                <div class="schedule-row">
+                   
+                    <div class="schedule-item">
+                        <span class="schedule-icon">&#127881;</span>
+                        <div><strong>Recepción</strong><span>21:00 hrs</span></div>
+                    </div>
+                </div>
+
+                <div style="width:100%; max-width:600px; margin:auto;">
+  <iframe
+    src="https://www.google.com/maps?q=Av.+San+Martin+1555,+Mina+Clavero&output=embed"
+    width="100%"
+    height="300"
+    style="border:0; border-radius:12px;"
+    allowfullscreen=""
+    loading="lazy">
+  </iframe>
+</div>
+
+                <a href="https://www.google.com/maps?q=Av.+San+Martin+1555,+Mina+Clavero" target="_blank" class="btn btn-outline">Ver ubicación en el mapa</a>
+            </div>
+        </div>
+        <img src="{% static 'InvitacionVirtual/img/separador-abajo.png' %}" alt="" class="section-sep bottom">
+    </section>
+
+    <!-- ==================== HOSPEDAJE ==================== -->
+    
+    <!-- ==================== INGRESO ==================== -->
+    <section class="ticket-section snow-bg">
+        <div class="flor-deco left"></div>
+        <div class="container">
+            <img src="{% static 'InvitacionVirtual/img/separador3.png' %}" alt="" class="img-separator">
+            <h2 class="section-title script-font">Información de Ingreso</h2>
+            <div class="info-card">
+                <h3>Tarjeta de Colaboración</h3>
+                <p>Para cubrir los gastos del evento, solicitamos una contribución de:</p>
+                <p class="ticket-price">$50.000 <span>por persona</span></p>
+                <div class="bank-box">
+                    <p class="bank-title">Datos bancarios</p>
+                    <p><strong>Alias:</strong> aiacoisanchez.ppay</p>
+                    <p><strong>CVU:</strong> 0000076500000004647430</p>
+                    <p><strong>A nombre de:</strong> Ailen Iacoi Sanchez</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RSVP ==================== -->
+    <section class="rsvp-section snow-bg">
+        <img src="{% static 'InvitacionVirtual/img/separador-arriba.png' %}" alt="" class="section-sep top invert">
+        <div class="container">
+            <h2 class="section-title script-font light">Confirma tu Asistencia</h2>
+            <div class="rsvp-card">
+                <p class="rsvp-intro">Tu presencia es muy importante para nosotros.<br>Por favor, confirma antes del <strong>1 de septiembre de 2026</strong>.</p>
+                <form method="POST" action="{% url 'index' %}" class="rsvp-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="(Opcional)">
+                        </div>
+                        <div class="form-group">
+                            <label for="adultos">Adultos</label>
+                            <input type="number" id="adultos" name="adultos" min="1" value="1" required placeholder="Adultos">
+                        </div>
+                        <div class="form-group">
+                            <label for="ninos">Niños</label>
+                            <input type="number" id="ninos" name="ninos" min="0" value="0" placeholder="Niños">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Asistirás?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="asistira" value="si" required checked> Sí, con mucho gusto
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="asistira" value="no" required> Lamentablemente no podré asistir
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje para los novios</label>
+                        <textarea id="mensaje" name="mensaje" rows="3" placeholder="Déjanos un mensaje especial..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Tenés alguna restricción alimentaria?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="restricciones" value="celiaco" class="restriccion-check" data-target="celiaco_cantidad"> Celíaco/a
+                                <span class="cantidad-wrapper" id="wrap_celiaco_cantidad">
+                                    <input type="number" name="celiaco_cantidad" id="celiaco_cantidad" min="1" placeholder="¿Cuántos?" class="cantidad-input">
+                                </span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="restricciones" value="vegano" class="restriccion-check" data-target="vegano_cantidad"> Vegano/a
+                                <span class="cantidad-wrapper" id="wrap_vegano_cantidad">
+                                    <input type="number" name="vegano_cantidad" id="vegano_cantidad" min="1" placeholder="¿Cuántos?" class="cantidad-input">
+                                </span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="restricciones" value="vegetariano" class="restriccion-check" data-target="vegetariano_cantidad"> Vegetariano/a
+                                <span class="cantidad-wrapper" id="wrap_vegetariano_cantidad">
+                                    <input type="number" name="vegetariano_cantidad" id="vegetariano_cantidad" min="1" placeholder="¿Cuántos?" class="cantidad-input">
+                                </span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="restricciones" value="otro" class="restriccion-check" data-target="restriccion_otro_detalle"> Otro
+                                <span class="cantidad-wrapper" id="wrap_restriccion_otro_detalle">
+                                    <input type="text" name="restriccion_otro_detalle" id="restriccion_otro_detalle" placeholder="¿Cuál?" class="cantidad-input text-input">
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Qué bebida preferís para la cena?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="bebida" value="Vino"> Vino
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="bebida" value="Cerveza"> Cerveza
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="bebida" value="Gaseosa"> Gaseosa
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="comprobante">Comprobante de transferencia <span style="font-weight:300;font-size:0.85em;">(foto o PDF, opcional)</span></label>
+                        <input type="file" id="comprobante" name="comprobante" accept="image/*,.pdf" class="file-input">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Confirmar Asistencia</button>
+                </form>
+            </div>
+        </div>
+        <img src="{% static 'InvitacionVirtual/img/separador-abajo.png' %}" alt="" class="section-sep bottom invert">
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        
+        <div class="container">
+            
+            <p class="footer-message">¡Esperamos celebrar este día<br>especial con vos!</p>
+            <div class="footer-names">Ailen & Juan</div>
+            <p class="footer-date">03 · 10 · 2026</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'InvitacionVirtual/js/countdown.js' %}"></script>
+    <script src="{% static 'InvitacionVirtual/js/main.js' %}"></script>
+    <script>
+        document.querySelectorAll('.restriccion-check').forEach(function(cb) {
+            cb.addEventListener('change', function() {
+                var wrapper = document.getElementById('wrap_' + this.dataset.target);
+                if (wrapper) {
+                    wrapper.classList.toggle('visible', this.checked);
+                    var input = document.getElementById(this.dataset.target);
+                    if (input && !this.checked) input.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
