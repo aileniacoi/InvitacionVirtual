@@ -39,4 +39,5 @@ class Confirmacion(models.Model):
         ordering = ['-fecha_confirmacion']
     
     def __str__(self):
-        return f"{self.nombre} - {'Asiste' if self.asistira else 'No asiste'} ({self.numero_personas} persona{'s' if self.numero_personas > 1 else ''})"
+        total_personas = self.numero_adultos + self.numero_ninos
+        return f"{self.nombre} - {'Asiste' if self.asistira else 'No asiste'} ({total_personas} persona{'s' if total_personas > 1 else ''})"

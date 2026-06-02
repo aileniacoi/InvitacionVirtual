@@ -4,6 +4,8 @@ from .models import Confirmacion
 import gspread
 from google.oauth2.service_account import Credentials
 import os
+import json
+from oauth2client.service_account import ServiceAccountCredentials
 
 SCOPES = [
     'https://www.googleapis.com/auth/spreadsheets',
@@ -14,8 +16,21 @@ CREDENTIALS_FILE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(
 
 HEADERS = ['Nombre', 'Email', 'Teléfono', '¿Asistirá?', 'Adultos', 'Niños', 'Mensaje', 'Comprobante', 'Celíaco/a', 'Cant. Celíacos', 'Vegano/a', 'Cant. Veganos', 'Vegetariano/a', 'Cant. Vegetarianos', 'Otra restricción', 'Detalle otra restricción', 'Bebida', 'Fecha']
 
+def get_google_creds():
+    # Obtenemos el JSON en formato string desde las variables de entorno
+    json_raw = os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON')
+    
+    # Lo convertimos a diccionario
+    creds_dict = json.loads(json_raw)
+    
+    # Definimos los alcances (scopes) necesarios
+    scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
+    
+    # Retornamos las credenciales listas para usar
+    return ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
+
 def _get_sheet():
-    creds = Credentials.from_service_account_file(CREDENTIALS_FILE, scopes=SCOPES)
+    creds = get_google_creds()
     client = gspread.authorize(creds)
     spreadsheet = client.open_by_key(SPREADSHEET_ID)
     sheet = spreadsheet.sheet1
