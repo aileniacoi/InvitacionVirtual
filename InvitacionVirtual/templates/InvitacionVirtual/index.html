@@ -22,16 +22,106 @@
 
     <!-- ==================== HERO ==================== -->
     <section class="hero">
-        <img src="{% static 'InvitacionVirtual/img/header.png' %}" alt="Save the Date - Ailen & Juan" class="hero-corazon">
-        <div class="scroll-indicator"><span>&#9660;</span></div>
+        <!-- Imagen atmosférica de fondo -->
+        <div class="hero-bg"></div>
+
+        <!-- Grano fotográfico -->
+        <div class="hero-grain"></div>
+
+        <!-- Partículas atmosféricas: 3 profundidades -->
+        <div class="hero-particles hero-particles--far"  aria-hidden="true"></div>
+        <div class="hero-particles hero-particles--mid"  aria-hidden="true"></div>
+        <div class="hero-particles hero-particles--near" aria-hidden="true"></div>
+
+        <!-- Capas de luz y color-grade -->
+        <div class="hero-glow hero-glow--top"></div>
+        <div class="hero-glow hero-glow--top-fade"></div>
+        <div class="hero-glow hero-glow--left"></div>
+        <div class="hero-glow hero-glow--right"></div>
+        <div class="hero-glow hero-glow--mid"></div>
+        <div class="hero-glow hero-glow--wide"></div>
+        <div class="hero-glow hero-glow--bottom"></div>
+
+        <!-- Marco exterior del hero (cubre toda la sección) -->
+        <div class="hero-outer-frame" aria-hidden="true">
+            <span class="hero-oc hero-oc--tl"></span>
+            <span class="hero-oc hero-oc--tr"></span>
+            <span class="hero-oc hero-oc--bl"></span>
+            <span class="hero-oc hero-oc--br"></span>
+        </div>
+
+        <!-- Líneas horizontales ambientales -->
+        <div class="hero-hlines" aria-hidden="true">
+            <span class="hero-hline hero-hline--top"></span>
+            <span class="hero-hline hero-hline--bot"></span>
+        </div>
+
+        <!-- Ornamentos laterales (izq / der del scene) -->
+        <div class="hero-lateral hero-lateral--l" aria-hidden="true">
+            <span class="hero-lat-line"></span>
+            <span class="hero-lat-diamond">◆</span>
+            <span class="hero-lat-line"></span>
+            <span class="hero-lat-diamond hero-lat-diamond--sm">·</span>
+            <span class="hero-lat-line hero-lat-line--short"></span>
+        </div>
+        <div class="hero-lateral hero-lateral--r" aria-hidden="true">
+            <span class="hero-lat-line"></span>
+            <span class="hero-lat-diamond">◆</span>
+            <span class="hero-lat-line"></span>
+            <span class="hero-lat-diamond hero-lat-diamond--sm">·</span>
+            <span class="hero-lat-line hero-lat-line--short"></span>
+        </div>
+
+        <!-- Escena decorativa: marco + esquinas + líneas laterales -->
+        <div class="hero-scene">
+            <span class="hero-corner hero-corner--tl" aria-hidden="true"></span>
+            <span class="hero-corner hero-corner--tr" aria-hidden="true"></span>
+            <span class="hero-corner hero-corner--bl" aria-hidden="true"></span>
+            <span class="hero-corner hero-corner--br" aria-hidden="true"></span>
+            <span class="hero-sideline hero-sideline--l" aria-hidden="true"></span>
+            <span class="hero-sideline hero-sideline--r" aria-hidden="true"></span>
+
+            <!-- Composición tipográfica -->
+            <div class="hero-content">
+                <p class="hero-eyebrow">nos casamos</p>
+
+                <div class="hero-orn-row">
+                    <span class="hero-orn-line"></span>
+                    <span class="hero-orn-glyph">✦</span>
+                    <span class="hero-orn-line"></span>
+                </div>
+
+                <div class="hero-names">
+                    <span class="hero-name">Ailen</span>
+                    <span class="hero-amp">&</span>
+                    <span class="hero-name">Juan</span>
+                </div>
+
+                <div class="hero-orn-row hero-orn-row--wide">
+                    <span class="hero-orn-line"></span>
+                    <span class="hero-orn-glyph">◆</span>
+                    <span class="hero-orn-line hero-orn-line--xs"></span>
+                    <span class="hero-orn-glyph hero-orn-glyph--dot">·</span>
+                    <span class="hero-orn-line hero-orn-line--xs"></span>
+                    <span class="hero-orn-glyph">◆</span>
+                    <span class="hero-orn-line"></span>
+                </div>
+
+                <p class="hero-date">Sábado · 3 de Octubre de 2026</p>
+                <p class="hero-place">Salón Siddhartha · Mina Clavero · Córdoba</p>
+                <p class="hero-time">21 : 00</p>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">scroll</div>
     </section>
 
     <!-- ==================== COUNTDOWN ==================== -->
-    <section class="countdown-section snow-bg">
+    <section class="countdown-section snow-bg has-ptc">
         <img src="{% static 'InvitacionVirtual/img/separador-arriba.png' %}" alt="" class="section-sep top">
         <div class="container">
-            <h2 class="section-title script-font">Faltan</h2>
-            <div class="countdown" id="countdown">
+            <h2 class="section-title script-font reveal reveal--fade">Faltan</h2>
+            <div class="countdown reveal-stagger" id="countdown">
                 <div class="countdown-item">
                     <span class="countdown-number" id="days">0</span>
                     <span class="countdown-label">Días</span>
@@ -61,8 +151,8 @@
         <div class="flor-deco left"></div>
         <div class="flor-deco right"></div>
         <div class="container">
-            <img src="{% static 'InvitacionVirtual/img/separador3.png' %}" alt="" class="img-separator">
-            <div class="invite-card">
+            <img src="{% static 'InvitacionVirtual/img/separador3.png' %}" alt="" class="img-separator reveal reveal--fade">
+            <div class="invite-card reveal reveal--scale">
                 <p class="invite-pre">Tenemos el agrado de invitarlos a nuestra boda</p>
                 <div class="invite-names">
                     <span class="invite-name">Ailen</span>
@@ -78,12 +168,12 @@
     </section>
 
     <!-- ==================== LUGAR ==================== -->
-    <section class="venue-section snow-bg">
+    <section class="venue-section snow-bg has-ptc">
         <div class="flor-deco right"></div>
         <img src="{% static 'InvitacionVirtual/img/separador-arriba.png' %}" alt="" class="section-sep top">
         <div class="container">
-            <h2 class="section-title script-font">Ceremonia &amp; Recepción</h2>
-            <div class="info-card">
+            <h2 class="section-title script-font reveal reveal--fade">Ceremonia &amp; Recepción</h2>
+            <div class="info-card reveal reveal--scale">
                 <h3>Salón de Eventos "Siddhartha"</h3>
                 <p class="venue-address">Av. San Martin 1555 , Mina Clavero</p>
                 <div class="schedule-row">
@@ -117,11 +207,11 @@
     <section class="ticket-section snow-bg">
         <div class="flor-deco left"></div>
         <div class="container">
-            <img src="{% static 'InvitacionVirtual/img/separador3.png' %}" alt="" class="img-separator">
-            <h2 class="section-title script-font">Información de Ingreso</h2>
-            <div class="info-card">
-                <h3>Tarjeta de Colaboración</h3>
-                <p>Para cubrir los gastos del evento, solicitamos una contribución de:</p>
+            <img src="{% static 'InvitacionVirtual/img/separador3.png' %}" alt="" class="img-separator reveal reveal--fade">
+            <h2 class="section-title script-font reveal reveal--fade">Información de Ingreso</h2>
+            <div class="info-card reveal reveal--scale">
+                <h3>Valor de la tarjeta</h3>
+                <p>Para colaborar con los gastos del evento, solicitamos una contribución de:</p>
                 <p class="ticket-price">$50.000 <span>por persona</span></p>
                 <div class="bank-box">
                     <p class="bank-title">Datos bancarios</p>
@@ -134,11 +224,11 @@
     </section>
 
     <!-- ==================== RSVP ==================== -->
-    <section class="rsvp-section snow-bg">
+    <section class="rsvp-section snow-bg has-ptc">
         <img src="{% static 'InvitacionVirtual/img/separador-arriba.png' %}" alt="" class="section-sep top invert">
         <div class="container">
-            <h2 class="section-title script-font light">Confirma tu Asistencia</h2>
-            <div class="rsvp-card">
+            <h2 class="section-title script-font light reveal reveal--fade">Confirma tu Asistencia</h2>
+            <div class="rsvp-card reveal reveal--scale">
                 <p class="rsvp-intro">Tu presencia es muy importante para nosotros.<br>Por favor, confirma antes del <strong>1 de septiembre de 2026</strong>.</p>
                 <form method="POST" action="{% url 'index' %}" class="rsvp-form" enctype="multipart/form-data">
                     {% csrf_token %}
@@ -236,13 +326,13 @@
     </section>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
+    <footer class="footer has-ptc">
         
         <div class="container">
             
-            <p class="footer-message">¡Esperamos celebrar este día<br>especial con vos!</p>
-            <div class="footer-names">Ailen & Juan</div>
-            <p class="footer-date">03 · 10 · 2026</p>
+            <p class="footer-message reveal reveal--fade">¡Esperamos celebrar este día<br>especial con vos!</p>
+            <div class="footer-names reveal">Ailen & Juan</div>
+            <p class="footer-date reveal reveal--fade">03 · 10 · 2026</p>
         </div>
     </footer>
 
